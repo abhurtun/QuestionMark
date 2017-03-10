@@ -1,0 +1,32 @@
+﻿@model  QuestionmarkTest.Models.DateDiffModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>@ViewBag.Message</h2>
+<p>
+    Calculate the number of days between two given dates.<br /><br />
+</p>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>Date Difference Calulator</legend>
+            <p>
+                @Html.LabelFor(m => m.DateFrom)
+                @Html.TextBoxFor(m => m.DateFrom)
+            </p>
+            <p>
+                @Html.LabelFor(m => m.DateTo)
+                @Html.TextBoxFor(m => m.DateTo)
+            </p>
+
+                        <p>
+                @Html.LabelFor(m => m.Days)
+                @Html.DisplayTextFor(m => m.Days)
+            </p>
+        <input type="submit" value="Calculate" />
+    </fieldset>
+}
+
